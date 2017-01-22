@@ -1,38 +1,34 @@
-<template>
-  <div id="gift">
-    wo shi gift
-    <div class="mydiv" v-touch:swipeUp.prevent="giftTap">dddddddd<br/>{{msg}}</div>
-  </div>
+﻿<template>
+<div id="gift">
+  <myHeader></myHeader>
+  <p class="gift_title">游戏礼包列表</p>
+  <giftContent></giftContent>
+</div>
 </template>
 
 <script>
+import myHeader from '../components/myHeader'
+import giftContent from '../components/giftContent'
 
-
-
-export default { 
+export default {
   name: 'app',
   data () {
-    return {
-      msg: '顶顶顶顶Welcome to Your Vue.js App'
+    return {      
     }
   },
-  methods:{
-  	giftTap:function(e){
-  		alert('giftTap');
-  		console.dir(e)
-  		return 'giftTap'
-  		//console.log(str)
-  	},
-  	changeMsg:function(){
-  		this.msg = 'dddd';
-  	},
-  }
+  components: { myHeader,giftContent }
 }
 </script>
 
 <style>
-.mydiv{
-	background: red;
-	height: 2000px;
+#gift {
+  font-size: 11px;
+  color: #9f9f9f;
+  font-family: '微软雅黑'
+}
+/*礼包界面主标题*/
+.gift_title {
+  margin: 20px 0 0 16px;
+  padding: 4px 0;
 }
 </style>
